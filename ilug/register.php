@@ -29,7 +29,10 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     
-<?php include 'header.php'; ?>
+<?php 
+session_start();
+include 'header.php'; 
+?>
 
   
     
@@ -60,8 +63,22 @@
             
 
             <form name="signup" method="post" action="cadastrando.php" class="p-5 bg-white">
-             
-				<div class="row form-group">
+            
+              
+            <?php
+              //if ($_SESSION['status_cadastrado']):
+            if(isset($_SESSION["mensagem"])):
+               print $_SESSION["mensagem"];
+               unset($_SESSION["mensagem"]);
+            endif; 
+            ?>
+             <!-- <div class="notification is-success">
+                  <p>Cadastro efetuado!</p>
+                  <p>Faça login informando o seu usuário e senha <a href="login.php">aqui</a></p>
+              </div> -->
+
+
+              <div class="row form-group">
                 
                 <div class="col-md-12">
                   <label class="text-black" for="email">Nome</label> 
@@ -71,22 +88,18 @@
 			  
 			  
 			  
-			  <div class="row form-group">
+			         <div class="row form-group">
                 
                 <div class="col-md-12">
                   <label class="text-black" for="email">E-mail</label> 
                   <input type="email" id="tmail" class="form-control email " name="email" placeholder = "Ex: João@hotmail.com" >
                 </div>
               </div>
-			 
-			  
-
-
-
+		
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="subject">Senha</label> 
-                  <input type="password" id="subject" class="form-control password" name="senha" size="8" maxlength="8" placeholder ="8 Digitos " >
+                  <input type="password" id="subject" class="form-control password" name="senha" size="8" maxlength="10" placeholder ="" >
                
 			   </div>
               </div> 

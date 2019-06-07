@@ -59,16 +59,6 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 mb-5"  data-aos="fade">
-			     <?php
-            if(isset($_SESSION['nao_autenticado'])):
-            ?>
-            <div class="notification is-danger">
-            <p>ERRO: Usuário ou senha inválidos.</p>
-            </div>
-            <?php
-            endif;
-            unset($_SESSION['nao_autenticado']);
-            ?>
             
 
             <form action="autenticacao_login.php" method="POST" class="p-5 bg-white">

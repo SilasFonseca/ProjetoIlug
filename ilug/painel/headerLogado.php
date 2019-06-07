@@ -20,7 +20,7 @@
                 <li><a href="contactLogado.php">Contato</a></li>
                 <li class="active"><a href="#"><span class="border-left pl-xl-4"><?php echo $_SESSION["usuario"];?></a></li>
                <li><a href="sairLogado.php" class="">Sair</a></li>
-                <li><a href="anuncio.php" class="cta"><span class="bg-primary text-white rounded">Anunciar</span></a></li>
+                <li><a href="painel/anuncio.php" class="cta"><span class="bg-primary text-white rounded">Anunciar</span></a></li>
               </ul>
             </nav>
           </div>
